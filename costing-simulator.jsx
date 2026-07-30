@@ -401,7 +401,7 @@ export default function App() {
       {
         id: `day-${Date.now()}-1`,
         title: "Day 1",
-        presetName: "e",
+        presetName: "",
         itemConfig: buildPresetConfig(DEFAULT_PRESETS[0].picks),
         custom: [],
       },

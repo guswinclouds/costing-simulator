@@ -260,7 +260,7 @@ const DEFAULT_PRESETS = [
       ["boat", "Maruti Return"],
       ["resto", "Sorent 50"],
       ["inclusion", "Diamond & Atuh"],
-      {"Inclusion", "Three House"}
+      {"Inclusion", "Three House"},
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -270,7 +270,7 @@ const DEFAULT_PRESETS = [
     label: "Combination Package",
     picks: [
       ["car", "Combination"],
-      ["inclusion", "Diamond & Atuh"]
+      ["inclusion", "Diamond & Atuh"],
       ["boat", "Maruti Return"],
       ["resto", "Sorent 50"],
       ["inclusion", "Retribution"],

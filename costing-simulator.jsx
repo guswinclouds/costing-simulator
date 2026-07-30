@@ -53,7 +53,7 @@ const CATALOG = [
     id: "dive",
     title: "Snorkeling & Diving",
     items: [
-      ["Wonderland 4 Place", 900000],
+      ["Wonderland 4 Place", 1200000],
       ["Elite 4 Place", 900000],
       ["Ocean 4 Place", 1200000],
       ["Gili Snorkeling", 1500000],
@@ -247,7 +247,7 @@ const DEFAULT_PRESETS = [
     picks: [
       ["car", "West"],
       ["boat", "Maruti Return"],,
-      ["resto", "Arjuna Lunch 100"],
+      ["resto", "TA Resto 50"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -258,8 +258,9 @@ const DEFAULT_PRESETS = [
     picks: [
       ["car", "East"],
       ["boat", "Maruti Return"],
-      ["resto", "Arjuna Lunch 100"],
+      ["resto", "Sorent 50"],
       ["inclusion", "Diamond & Atuh"],
+      {"Inclusion", "Three House"}
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -269,8 +270,9 @@ const DEFAULT_PRESETS = [
     label: "Combination Package",
     picks: [
       ["car", "Combination"],
+      ["inclusion", "Diamond & Atuh"]
       ["boat", "Maruti Return"],
-      ["resto", "Arjuna Lunch 100"],
+      ["resto", "Sorent 50"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -280,8 +282,8 @@ const DEFAULT_PRESETS = [
     label: "Snorkeling Only",
     picks: [
       ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
-      ["resto", "Arjuna Lunch 75"],
+      ["dive", "Ocean 4 Place"],
+      ["resto", "TA Resto 50"],
       ["inclusion", "Snack Box + Mineral"],
     ],
   },
@@ -291,8 +293,8 @@ const DEFAULT_PRESETS = [
     picks: [
       ["car", "Combination"],
       ["boat", "Rayfish Return"],
-      ["dive", "Manta Point Sharing"],
-      ["resto", "Khamara 150"],
+      ["dive", "Ocean 4 Places"],
+      ["resto", "TA Resto 50"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -962,7 +964,7 @@ Format output with two sections separated by "WHATSAPP_PITCH":
         builtItinerary += `===================================\n`;
         builtItinerary += `🗓 *${day.title.toUpperCase()} TIME SCHEDULE*\n`;
         builtItinerary += `===================================\n`;
-        builtItinerary += `⏰ 06:30 AM - 07:15 AM | Hotel Pickup in Bali\n`;
+        builtItinerary += `⏰ 06:00 AM - 07:00 AM | Hotel Pickup in Bali\n`;
         builtItinerary += `   • Private AC vehicle pickup from hotel lobby.\n`;
         builtItinerary += `⏰ 07:30 AM - 08:00 AM | Sanur Harbor Check-in\n`;
         builtItinerary += `   • Collect fast boat boarding passes.\n`;

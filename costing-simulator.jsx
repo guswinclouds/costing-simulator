@@ -1,3 +1,9 @@
+const [isAdmin, setIsAdmin] = useState(false);
+const [catalog, setCatalog] = useState(() => {
+  const saved = localStorage.getItem('custom_catalog');
+  return saved ? JSON.parse(saved) : DEFAULT_CATALOG;
+});
+
 import React, { useState, useMemo, useEffect } from "react";
 import {
   Plus,
@@ -114,7 +120,7 @@ const CATALOG = [
     items: [
       ["Snack Box + Mineral", 10000],
       ["Retribution", 25000],
-      ["Diamond & Atuh", 45000],
+      ["Diamond & Atuh", 60000],
       ["Three House", 30000],
       ["Paluang Cliff", 35000],
       ["Kelapa Glass", 10000],
@@ -240,8 +246,7 @@ const DEFAULT_PRESETS = [
     label: "West Package",
     picks: [
       ["car", "West"],
-      ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
+      ["boat", "Maruti Return"],,
       ["resto", "Arjuna Lunch 100"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
@@ -253,7 +258,6 @@ const DEFAULT_PRESETS = [
     picks: [
       ["car", "East"],
       ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
       ["resto", "Arjuna Lunch 100"],
       ["inclusion", "Diamond & Atuh"],
       ["inclusion", "Retribution"],
@@ -266,7 +270,6 @@ const DEFAULT_PRESETS = [
     picks: [
       ["car", "Combination"],
       ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
       ["resto", "Arjuna Lunch 100"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],

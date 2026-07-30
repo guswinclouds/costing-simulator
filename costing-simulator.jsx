@@ -260,7 +260,7 @@ const DEFAULT_PRESETS = [
       ["boat", "Maruti Return"],
       ["resto", "Sorent 50"],
       ["inclusion", "Diamond & Atuh"],
-      {"Inclusion", "Three House"},
+      {"Inclusion": "Three House"},
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],

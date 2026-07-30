@@ -393,7 +393,7 @@ export default function App() {
   const createDefaultQuoteSession = (idNumber = 1, titleOverride = null) => ({
     id: `quote-${Date.now()}-${idNumber}`,
     title: titleOverride || `Quote #${idNumber}`,
-    adults: 2,
+    adults: 0,
     kids: 0,
     kidsRate: 65,
     margin: 25,
@@ -401,7 +401,7 @@ export default function App() {
       {
         id: `day-${Date.now()}-1`,
         title: "Day 1",
-        presetName: "West Package",
+        presetName: "e",
         itemConfig: buildPresetConfig(DEFAULT_PRESETS[0].picks),
         custom: [],
       },

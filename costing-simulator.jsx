@@ -1,3 +1,9 @@
+const [isAdmin, setIsAdmin] = useState(false);
+const [catalog, setCatalog] = useState(() => {
+  const saved = localStorage.getItem('custom_catalog');
+  return saved ? JSON.parse(saved) : DEFAULT_CATALOG;
+});
+
 import React, { useState, useMemo, useEffect } from "react";
 import {
   Plus,
@@ -47,7 +53,7 @@ const CATALOG = [
     id: "dive",
     title: "Snorkeling & Diving",
     items: [
-      ["Wonderland 4 Place", 900000],
+      ["Wonderland 4 Place", 1200000],
       ["Elite 4 Place", 900000],
       ["Ocean 4 Place", 1200000],
       ["Gili Snorkeling", 1500000],
@@ -114,7 +120,7 @@ const CATALOG = [
     items: [
       ["Snack Box + Mineral", 10000],
       ["Retribution", 25000],
-      ["Diamond & Atuh", 45000],
+      ["Diamond & Atuh", 60000],
       ["Three House", 30000],
       ["Paluang Cliff", 35000],
       ["Kelapa Glass", 10000],
@@ -240,9 +246,8 @@ const DEFAULT_PRESETS = [
     label: "West Package",
     picks: [
       ["car", "West"],
-      ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
-      ["resto", "Arjuna Lunch 100"],
+      ["boat", "Maruti Return"],,
+      ["resto", "TA Resto 50"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -253,9 +258,9 @@ const DEFAULT_PRESETS = [
     picks: [
       ["car", "East"],
       ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
-      ["resto", "Arjuna Lunch 100"],
+      ["resto", "Sorent 50"],
       ["inclusion", "Diamond & Atuh"],
+      {"Inclusion": "Three House"},
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -265,9 +270,9 @@ const DEFAULT_PRESETS = [
     label: "Combination Package",
     picks: [
       ["car", "Combination"],
+      ["inclusion", "Diamond & Atuh"],
       ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
-      ["resto", "Arjuna Lunch 100"],
+      ["resto", "Sorent 50"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -277,8 +282,8 @@ const DEFAULT_PRESETS = [
     label: "Snorkeling Only",
     picks: [
       ["boat", "Maruti Return"],
-      ["dive", "Sharing Snorkeling"],
-      ["resto", "Arjuna Lunch 75"],
+      ["dive", "Ocean 4 Place"],
+      ["resto", "TA Resto 50"],
       ["inclusion", "Snack Box + Mineral"],
     ],
   },
@@ -288,8 +293,8 @@ const DEFAULT_PRESETS = [
     picks: [
       ["car", "Combination"],
       ["boat", "Rayfish Return"],
-      ["dive", "Manta Point Sharing"],
-      ["resto", "Khamara 150"],
+      ["dive", "Ocean 4 Places"],
+      ["resto", "TA Resto 50"],
       ["inclusion", "Retribution"],
       ["inclusion", "Snack Box + Mineral"],
     ],
@@ -390,7 +395,7 @@ export default function App() {
   const createDefaultQuoteSession = (idNumber = 1, titleOverride = null) => ({
     id: `quote-${Date.now()}-${idNumber}`,
     title: titleOverride || `Quote #${idNumber}`,
-    adults: 2,
+    adults: 0,
     kids: 0,
     kidsRate: 65,
     margin: 25,
@@ -398,7 +403,7 @@ export default function App() {
       {
         id: `day-${Date.now()}-1`,
         title: "Day 1",
-        presetName: "West Package",
+        presetName: "",
         itemConfig: buildPresetConfig(DEFAULT_PRESETS[0].picks),
         custom: [],
       },
@@ -959,7 +964,7 @@ Format output with two sections separated by "WHATSAPP_PITCH":
         builtItinerary += `===================================\n`;
         builtItinerary += `🗓 *${day.title.toUpperCase()} TIME SCHEDULE*\n`;
         builtItinerary += `===================================\n`;
-        builtItinerary += `⏰ 06:30 AM - 07:15 AM | Hotel Pickup in Bali\n`;
+        builtItinerary += `⏰ 06:00 AM - 07:00 AM | Hotel Pickup in Bali\n`;
         builtItinerary += `   • Private AC vehicle pickup from hotel lobby.\n`;
         builtItinerary += `⏰ 07:30 AM - 08:00 AM | Sanur Harbor Check-in\n`;
         builtItinerary += `   • Collect fast boat boarding passes.\n`;
